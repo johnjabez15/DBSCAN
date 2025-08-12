@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clustering Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Clustering Result</h1>
+            <div class="result-box">
+                <p>Based on the provided data, the customer:</p>
+                <p class="prediction-text">{{ prediction | safe }}</p>
+            </div>
+            
+            <div class="plot-container">
+                <img src="{{ plot_url }}" alt="DBSCAN Clustering Visualization" class="clustering-plot">
+            </div>
+
+            <a href="/" class="button secondary-button">Make Another Prediction</a>
+        </div>
+    </div>
+
+</body>
+</html>

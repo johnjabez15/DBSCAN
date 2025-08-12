@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBSCAN Customer Segmentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>DBSCAN Customer Segmentation</h1>
+            <p class="subtitle">Enter customer behavior data to see which segment they belong to.</p>
+
+            <form action="/predict" method="post" class="form">
+                <div class="form-group">
+                    <label for="annual_spending">Annual Spending ($):</label>
+                    <input type="number" id="annual_spending" name="annual_spending" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="visit_frequency">Visit Frequency (times/year):</label>
+                    <input type="number" id="visit_frequency" name="visit_frequency" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time_spent_online">Time Spent Online (hours/month):</label>
+                    <input type="number" id="time_spent_online" name="time_spent_online" step="0.01" min="0" required>
+                </div>
+
+                <button type="submit" class="button">Predict Segment</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
